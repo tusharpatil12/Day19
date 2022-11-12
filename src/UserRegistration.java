@@ -4,24 +4,24 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-	public  void  valid(String firstName){
-		Pattern pattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
-		Matcher check = pattern.matcher(firstName);
-		if(check.matches()){
-			System.out.println("email is Valid");
-		}
-		else {
-			System.out.println("email not Valid ! please Enter valid");
-		}
+	public  void  validEmail(String mobile){
+        Pattern pattern = Pattern.compile("^?(91)+?\\s+[0-9]{10}+$");
+        Matcher check = pattern.matcher(mobile);
+        if(check.matches()){
+            System.out.println("  mobile is Valid");
+        }
+        else {
+            System.out.println("  mobile  not Valid ! please Enter valid Name");
+        }
+    
 	}
 
 	public static void main(String[] args) {
 		UserRegistration user =new UserRegistration();
-		Scanner sc =new Scanner(System.in);
-		System.out.println("Enter email :");
-		String email =sc.nextLine();
-		user.valid(email);
-
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter  mobile :");
+        String   mobile =sc.nextLine();
+        user.validEmail( mobile);
 	}
 
 }
